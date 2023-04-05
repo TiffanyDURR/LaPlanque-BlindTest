@@ -1,4 +1,4 @@
-import { songs } from "./blindTestData.js";
+import { songs } from "./data.js";
 
 // DOM - Containers
 const scoreContainer = document.getElementById("score");
