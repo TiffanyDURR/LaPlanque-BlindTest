@@ -82,25 +82,25 @@ function startGame() {
 }
 
 turnDownVolumeButton.addEventListener("click", () => {
-  turnUpVolumeButton.innerHTML = `<i style="color: #b6b6b6" class="fas fa-volume-up"></i>`;
+  turnUpVolumeButton.innerHTML = `<i style="color: rgb(28, 14, 91, 0.5);" class="fas fa-volume-up"></i>`;
   if (w <= 1) {
     w = 0;
-    turnDownVolumeButton.innerHTML = `<i style="color: #2e2e2e" class="fas fa-volume-mute"></i>`;
+    turnDownVolumeButton.innerHTML = `<i style="color: rgb(28, 14, 91, 0.2)" class="fas fa-volume-mute"></i>`;
   } else {
     w = w - 1;
-    turnDownVolumeButton.innerHTML = `  <i style="color: #b6b6b6" class="fas fa-volume-down"></i>`;
+    turnDownVolumeButton.innerHTML = `  <i style="color: rgb(28, 14, 91, 0.5);" class="fas fa-volume-down"></i>`;
   }
   audio.volume = `0.${w}`;
 });
 
 turnUpVolumeButton.addEventListener("click", () => {
-  turnDownVolumeButton.innerHTML = `<i style="color: #b6b6b6" class="fas fa-volume-down"></i>`;
+  turnDownVolumeButton.innerHTML = `<i style="color: rgb(28, 14, 91, 0.5);" class="fas fa-volume-down"></i>`;
   if (w >= 9) {
     w = 9;
-    turnUpVolumeButton.innerHTML = `<i style="color: #2e2e2e" class="fas fa-volume-up"></i>`;
+    turnUpVolumeButton.innerHTML = `<i style="color: rgb(28, 14, 91, 0.2)" class="fas fa-volume-up"></i>`;
   } else {
     w = w + 1;
-    turnUpVolumeButton.innerHTML = `<i style="color: #b6b6b6" class="fas fa-volume-up"></i>`;
+    turnUpVolumeButton.innerHTML = `<i style="color: rgb(28, 14, 91, 0.5);" class="fas fa-volume-up"></i>`;
   }
   audio.volume = `0.${w}`;
 });
@@ -248,7 +248,7 @@ function listenAgain() {
     scoreChecker();
     audio.volume = `0.${w}`;
     audioPlay(y, v);
-    bonusInfos = `-1 point !`;
+    bonusInfos = `<span>-1 point !</span>`;
     bonusAnimated(bonusInfos);
   });
 }
@@ -316,31 +316,31 @@ function chronoChecker() {
     score = score + 5;
     scoreContainer.innerHTML = `<span>Score</span>${score}`;
 
-    bonusInfos = `+5 Points`;
+    bonusInfos = `<span>+5 Points</span>`;
     bonusAnimated(bonusInfos);
   } else if (seconds.textContent > 3 && seconds.textContent <= 8) {
     score = score + 3;
     scoreContainer.innerHTML = `<span>Score</span>${score}`;
 
-    bonusInfos = `+3 Points`;
+    bonusInfos = `<span>+3 Points</span>`;
     bonusAnimated(bonusInfos);
   } else if (seconds.textContent > 8 && seconds.textContent <= 14) {
     score = score + 2;
     scoreContainer.innerHTML = `<span>Score</span>${score}`;
 
-    bonusInfos = `+2 Points`;
+    bonusInfos = `<span>+2 Points</span>`;
     bonusAnimated(bonusInfos);
   } else if (seconds.textContent > 14 && seconds.textContent <= 59) {
     score = score + 1;
     scoreContainer.innerHTML = `<span>Score</span>${score}`;
 
-    bonusInfos = `+1 Point`;
+    bonusInfos = `<span>+1 Point</span>`;
     bonusAnimated(bonusInfos);
   } else if (seconds.textContent > 59) {
     score = score + 0;
     scoreContainer.innerHTML = `<span>Score</span>${score}`;
 
-    bonusInfos = `+0 Point`;
+    bonusInfos = `<span>+0 Point</span>`;
     bonusAnimated(bonusInfos);
   }
 }
@@ -393,7 +393,7 @@ function bonusAnimated(bonusInfos) {
   }, 1800);
 }
 
-const colors = ["#e34069", "#e34069", "#e34069"];
+const colors = ["#f18d5c", "#f18d5c", "#f18d5c"];
 const bubbles = 8;
 
 const explode = () => {
